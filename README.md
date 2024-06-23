@@ -1,4 +1,4 @@
-![Image](https://graph.org/file/9901c2070cea11d1aa194.jpg)
+![Image](https://telegra.ph/file/7308bc6c3875a6f1cb933.jpg)
 
 ## WAIFU & HUSBANDO CATCHER 
 
