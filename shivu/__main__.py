@@ -100,7 +100,7 @@ async def send_image(update: Update, context: CallbackContext) -> None:
     await context.bot.send_photo(
         chat_id=chat_id,
         photo=character['img_url'],
-        caption=f"""A New {character['rarity']} Character Appeared...\n/guess Character Name and add in Your Harem""",
+        caption=f"""A New {character['rarity']} Character Appeared...\n/Kidnap Guess Character Name and add in Your Harem""",
         parse_mode='Markdown')
 
 
@@ -214,7 +214,7 @@ async def fav(update: Update, context: CallbackContext) -> None:
     
     user = await user_collection.find_one({'id': user_id})
     if not user:
-        await update.message.reply_text('You have not Guessed any characters yet....')
+        await update.message.reply_text('You have not Kidnapped any characters yet....')
         return
 
 
