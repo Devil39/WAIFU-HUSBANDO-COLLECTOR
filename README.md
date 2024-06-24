@@ -8,8 +8,8 @@
 
 
 _**Available On Telegram As 
-[Collect Em all](https://t.me/Collect_em_AllBot) and**_
-_Ask for Help in our [Support Chat](https://t.me/Collect_em_support)_
+[Collect Em all](https://t.me/Kidnap_Your_Waifu_Bot) and**_
+_Ask for Help in our [Support Chat](https://t.me/SD_BotsSupport)_
 
 ## About The Repository
 ● This is an Open Source Implementation of Character Catcher Bot for Telegram
@@ -42,7 +42,7 @@ use Rarity Number accordingly rarity Map
 
 
 ## USER COMMANDS
-- `/guess` - Guess the character
+- `/Kidnap` - Guess the character
 - `/fav` - Add a character to favorites
 - `/trade` - Trade a character with another user
 - `/gift` - Gift a character to another user
