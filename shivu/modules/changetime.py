@@ -6,9 +6,11 @@ from pyrogram.types import Message
 from shivu import application, sudo_users, collection, db, CHARA_CHANNEL_ID, SUPPORT_CHAT
 
 ADMINS = [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]
-SUDO = [sudo_users]
+
 
 @shivuu.on_message(filters.command("changetime"))
+
+SUDO = [sudo_users]
 async def change_time(client: Client, message: Message):
     
     user_id = message.from_user.id
