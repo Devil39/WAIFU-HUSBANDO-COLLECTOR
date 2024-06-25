@@ -14,7 +14,8 @@ async def change_time(client: Client, message: Message):
     user_id = message.from_user.id
     chat_id = message.chat.id
     member = await shivuu.get_chat_member(chat_id,user_id)
-        
+    shivuu.get_chat_member(chat_id,user_id)
+    
     if user_id not in SUDO:
     return 
     if member.status not in ADMINS :
