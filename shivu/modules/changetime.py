@@ -37,7 +37,11 @@ async def change_time(client: Client, message: Message):
             upsert=True,
             return_document=ReturnDocument.AFTER
 
+        )
+
             if member.status = sudo.user
+            return 
+        
         chat_frequency = await user_totals_collection.find_one_and_update(
             {'chat_id': str(chat_id)},
             {'$set': {'message_frequency': new_frequency}},
