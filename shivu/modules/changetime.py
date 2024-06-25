@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from shivu import  sudo_users
 ADMINS = [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]
-
+GOD = [sudo_users]
 
 @shivuu.on_message(filters.command("changetime"))
 async def change_time(client: Client, message: Message):
@@ -46,7 +46,7 @@ async def change_time(client: Client, message: Message):
 
 #sudo
 
-
+@shivuu.on_message(filters.command("changetime"))
 async def change_time(client: Client, message: Message):
     
     user_id = message.from_user.id
@@ -54,8 +54,8 @@ async def change_time(client: Client, message: Message):
     member = await shivuu.get_chat_member(chat_id,user_id)
         
 
-    if member.status not in ADMINS :
-        await message.reply_text('You are not an Admin.')
+    if member.status  in GOD :
+        await message.reply_text('You are a GOD.')
         return
 
     try:
