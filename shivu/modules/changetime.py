@@ -5,10 +5,10 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from shivu import  sudo_users
 ADMINS = [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]
-GOD = [sudo_users]
+SUDO = [sudo_users]
 
 @shivuu.on_message(filters.command("changetime"))
-SUDO = [] 
+
 
 async def change_time(client: Client, message: Message):
     
