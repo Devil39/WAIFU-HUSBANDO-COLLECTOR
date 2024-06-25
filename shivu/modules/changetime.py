@@ -40,18 +40,17 @@ async def change_time(client: Client, message: Message):
             return_document=ReturnDocument.AFTER
         )
 
-       if user_id in sudo_users:
-           return 
+        if user_id in sudo_users:
+            return 
 
         chat_frequency = await user_totals_collection.find_one_and_update(
             {'chat_id': str(chat_id)},
             {'$set': {'message_frequency': new_frequency}},
             upsert=True,
             return_document=ReturnDocument.AFTER
-)
+        )
 
         
         await message.reply_text(f'Successfully changed {new_frequency}')
     except Exception as e:
         await message.reply_text(f'Failed to change {str(e)}')
-        
