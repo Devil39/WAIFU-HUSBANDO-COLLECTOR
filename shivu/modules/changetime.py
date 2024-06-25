@@ -40,7 +40,7 @@ async def change_time(client: Client, message: Message):
             return_document=ReturnDocument.AFTER
         )
 
-       if user_id in SUDO:
+       if user_id in sudo_users:
            return 
 
         chat_frequency = await user_totals_collection.find_one_and_update(
