@@ -3,7 +3,7 @@ from pyrogram.enums import ChatMemberStatus, ChatType
 from shivu import user_totals_collection, shivuu
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
+from shivu import  sudo_users
 ADMINS = [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]
 
 
@@ -39,7 +39,7 @@ async def change_time(client: Client, message: Message):
 
         )
 
-            if member.status in sudo.users:
+            if member.status in sudo_users:
             return 
         
         chat_frequency = await user_totals_collection.find_one_and_update(
