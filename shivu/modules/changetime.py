@@ -55,4 +55,6 @@ async def change_time(client: Client, message: Message):
 
         await message.reply_text(f'Successfully changed {new_frequency}')
     except Exception as e:
-        await message.reply_text(f'Failed)
+        await message.reply_text(f'Failed  to change {str(e)}')
+
+
