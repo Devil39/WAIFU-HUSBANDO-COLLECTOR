@@ -42,7 +42,7 @@ async def change_time(client: Client, message: Message):
         if user_id in sudo_users:
             return 
 
-        try:
+    try:
         args = message.command
         if len(args) != 2:
             await message.reply_text('Please use: /changetime NUMBER')
