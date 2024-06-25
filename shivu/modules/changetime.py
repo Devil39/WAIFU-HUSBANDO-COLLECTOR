@@ -17,8 +17,8 @@ async def change_time(client: Client, message: Message):
     member = await shivuu.get_chat_member(chat_id,user_id)
         
     if user_id not in SUDO:
-     return  
-    if member.status not in ADMINS :
+        return  
+    if member.status not in ADMINS:
         await message.reply_text('You are not an Admin.')
         return
 
@@ -33,16 +33,14 @@ async def change_time(client: Client, message: Message):
             await message.reply_text('The message frequency must be greater than or equal to 100.')
             return
 
-    
         chat_frequency = await user_totals_collection.find_one_and_update(
             {'chat_id': str(chat_id)},
             {'$set': {'message_frequency': new_frequency}},
             upsert=True,
             return_document=ReturnDocument.AFTER
-
         )
 
-            if member.status in sudo_users:
+        if member.status in sudo_users:
             return 
         
         chat_frequency = await user_totals_collection.find_one_and_update(
@@ -50,11 +48,8 @@ async def change_time(client: Client, message: Message):
             {'$set': {'message_frequency': new_frequency}},
             upsert=True,
             return_document=ReturnDocument.AFTER
-            
         )
 
         await message.reply_text(f'Successfully changed {new_frequency}')
     except Exception as e:
-        await message.reply_text(f'Failed  to change {str(e)}')
-
-
+        await message.reply_text(f'Failed to change {str(e)}')
