@@ -3,7 +3,8 @@ from pyrogram.enums import ChatMemberStatus, ChatType
 from shivu import user_totals_collection, shivuu
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from shivu import  sudo_users
+from shivu import application, sudo_users, collection, db, CHARA_CHANNEL_ID, SUPPORT_CHAT
+
 ADMINS = [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]
 SUDO = [sudo_users]
 
