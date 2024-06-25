@@ -11,7 +11,7 @@ class Config(object):
     SUPPORT_CHAT = "SD_Botssupport"
     UPDATE_CHAT = "Collect_em_support"
     BOT_USERNAME = "Kidnap_your_waifu_Bot"
-    CHARA_CHANNEL_ID = "-1002091841088"
+    CHARA_CHANNEL_ID = "--1001855181135"
     api_id = 26626068
     api_hash = "bf423698bcbe33cfd58b11c78c42caa2"
 
