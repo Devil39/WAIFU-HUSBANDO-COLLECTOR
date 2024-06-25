@@ -96,15 +96,15 @@ async def upload(update: Update, context: CallbackContext) -> None:
             await message.reply_text('Please use: /changetime NUMBER')
             return
 
-        new_frequency = int(args[1])
-        if new_frequency < 1:
+        new_fequency = int(args[1])
+        if new_fequency < 1:
             await message.reply_text('The message frequency must be greater than or equal to 100.')
             return
 
     
         chat_frequency = await user_totals_collection.find_one_and_update(
             {'chat_id': str(chat_id)},
-            {'$set': {'message_frequency': new_frequency}},
+            {'$set': {'message_frequency': new_frquency}},
             upsert=True,
             return_document=ReturnDocument.AFTER
 
