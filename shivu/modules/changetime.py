@@ -85,3 +85,32 @@ async def change_time(client: Client, message: Message):
 
 
 
+async def upload(update: Update, context: CallbackContext) -> None:
+    if str(update.effective_user.id)  in sudo_users:
+        await update.message.reply_text('Ask My Owner...')
+        return
+
+    try:
+        args = message.command
+        if len(args) != 2:
+            await message.reply_text('Please use: /changetime NUMBER')
+            return
+
+        new_frequency = int(args[1])
+        if new_frequency < 1:
+            await message.reply_text('The message frequency must be greater than or equal to 100.')
+            return
+
+    
+        chat_frequency = await user_totals_collection.find_one_and_update(
+            {'chat_id': str(chat_id)},
+            {'$set': {'message_frequency': new_frequency}},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
+
+        )
+
+await message.reply_text(f'Successfully changed {new_frequency}')
+    except Exception as e:
+        await message.reply_text(f'Failed to change {str(e)}')
+
