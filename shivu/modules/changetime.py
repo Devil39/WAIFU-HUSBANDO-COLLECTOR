@@ -104,7 +104,7 @@ async def upload(update: Update, context: CallbackContext) -> None:
     
         chat_frequency = await user_totals_collection.find_one_and_update(
             {'chat_id': str(chat_id)},
-            {'$set': {'message_frequency': new_frquency}},
+            {'$set': {'message_frequency': new_fequency}},
             upsert=True,
             return_document=ReturnDocument.AFTER
 
