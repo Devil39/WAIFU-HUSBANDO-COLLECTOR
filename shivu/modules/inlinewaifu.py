@@ -32,10 +32,10 @@ async def watch_waifus(update: Update, context: CallbackContext) -> None:
 
         if search_terms:
             regex = re.compile(' '.join(search_terms), re.IGNORECASE)
-            all_waifus = list(await collection.find({"$or": [{"name": regex}, {"anime": regex}]}).to_list(length=None)
+            all_characters = list(await collection.find({"$or": [{"name": regex}, {"anime": regex}]}).to_list(length=None)
 
             results = []
-            for waifu in all_waifus:
+            for waifu in all_characters :
                 global_count = await user_collection.count_documents({'characters.id': waifu['id']})
 
                 caption = f"<b>Look At This Waifu !!</b>\n\n🌸:<b> {waifu['name']}</b>\n🏖️: <b>{waifu['anime']}</b>\n<b>{waifu['rarity']}</b>\n🆔️: <b>{waifu['id']}</b>\n\n<b>Globally Guessed {global_count} Times...</b>"
