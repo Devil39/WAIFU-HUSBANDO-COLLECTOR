@@ -32,7 +32,7 @@ async def watch_waifus(update: Update, context: CallbackContext) -> None:
 
         if search_terms:
             regex = re.compile(' '.join(search_terms), re.IGNORECASE)
-            all_characters = list(await collection.find({"$or": [{"name": regex}, {"anime": regex}]}).to_list(length=None)
+            all_characters = list(await collection.find({"$or": [{"name": regex}, {"anime": regex}]}).to_list(length=None))
 
             results = []
             for waifu in all_characters :
