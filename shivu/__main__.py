@@ -124,7 +124,7 @@ async def kidnap(update: Update, context: CallbackContext) -> None:
 
     name_parts = last_characters[chat_id]['name'].lower().split()
 
-    if sorted(name_parts) == sorted(kidnap.split()) or any(part == kidnap for part in name_parts):
+    if sorted(name_parts) == sorted(guess.split()) or any(part == kidnap for part in name_parts):
 
     
         first_correct_guesses[chat_id] = user_id
