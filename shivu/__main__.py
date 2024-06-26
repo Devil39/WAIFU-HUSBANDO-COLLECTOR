@@ -104,7 +104,7 @@ async def send_image(update: Update, context: CallbackContext) -> None:
         parse_mode='Markdown')
 
 
-async def guess(update: Update, context: CallbackContext) -> None:
+async def kidnap(update: Update, context: CallbackContext) -> None:
     chat_id = update.effective_chat.id
     user_id = update.effective_user.id
 
@@ -115,16 +115,16 @@ async def guess(update: Update, context: CallbackContext) -> None:
         await update.message.reply_text(f'❌️ Already Kidnapped By Someone.. Try Next Time Bruhh ')
         return
 
-    guess = ' '.join(context.args).lower() if context.args else ''
+    kidnap = ' '.join(context.args).lower() if context.args else ''
     
-    if "()" in guess or "&" in guess.lower():
+    if "()" in kidnap or "&" in guess.lower():
         await update.message.reply_text("Nahh You Can't use This Types of words in your guess..❌️")
         return
 
 
     name_parts = last_characters[chat_id]['name'].lower().split()
 
-    if sorted(name_parts) == sorted(guess.split()) or any(part == guess for part in name_parts):
+    if sorted(name_parts) == sorted(kidnap.split()) or any(part == kidnap for part in name_parts):
 
     
         first_correct_guesses[chat_id] = user_id
