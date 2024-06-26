@@ -58,4 +58,3 @@ async def watch_waifus(update: Update, context: CallbackContext) -> None:
             await context.bot.send_message(update.effective_chat.id, 'Please provide an anime name or waifu name to search.')
     else:
         await context.bot.send_message(update.effective_chat.id, 'Please mention the bot username in your query.')
-      
